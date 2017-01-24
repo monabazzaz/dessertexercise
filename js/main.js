@@ -36,10 +36,31 @@ var images = {
 var apple = document.querySelector('.Fruit--apple');
 apple.addEventListener('click', function() {
   console.log('Apple clicked.');
-  document.getElementById('.Holder Holder--fruit').innerHTML = '<img src"' + images.fruits.apple + '">';
+  imageHolder = document.querySelector('.Holder--fruit');
+  appleImage = document.createElement('img');
+  appleImage.src = images.fruits.apple;
+  imageHolder.appendChild(appleImage);
   apple = currentFruit;
-  // update image in fruit holder
 });
+
+var icecream = document.querySelector('.Dessert--icecream');
+icecream.addEventListener('click', function() {
+  console.log('Icecream cliked.');
+  imageHolder = document.querySelector('.Holder--dessert');
+  icecreamImage = document.createElement('img');
+  icecreamImage.src = images.desserts.icecream;
+  imageHolder.appendChild(icecreamImage);
+  icecream = currentDessert;
+
+  if (apple == currentFruit && icecream == currentDessert) {
+    var appleIce = document.querySelector('.Holder--result');
+    appiceImage = document.createElement('img');
+    appiceImage.src = images.mixes.apple.icecream;
+    appleIce.appendChild(appiceImage);
+  }
+});
+
+
 
 // var orange = document.querySelector('.Fruit--orange');
 // apple.addEventListener('click', function() {
